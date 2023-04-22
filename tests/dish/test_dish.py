@@ -31,6 +31,5 @@ def test_dish():
 
     assert dishA.recipe == {}
 
-    assert dishA.get_restrictions() == set(
-        {Restrictions.ANIMAL_DERIVED, Restrictions.LACTOSE}
-    assert dishA.get_ingredients() == set("queijo mussarela")
+    assert dishA.get_restrictions() == {Restrictions.ANIMAL_DERIVED, Restrictions.LACTOSE}
+    assert dishA.get_ingredients() == {Ingredient("queijo mussarela")}
