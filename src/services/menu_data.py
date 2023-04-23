@@ -13,7 +13,7 @@ class MenuData:
         
             current_dish.add_ingredient_dependency(
                 Ingredient(csv_reader[0]["ingredient"]),
-                int(csv_file[0]["recipe_amount"]), 
+                int(csv_reader[0]["recipe_amount"]), 
             )
 
             self.dishes.add(current_dish)
@@ -28,5 +28,5 @@ class MenuData:
                 current_dish.add_ingredient_dependency(new_ingredient, amount)
             else:
                 current_dish = new_dish
-                current_dish.add_ingredient_dependency(new_ingredient, amount)
+                self.dishes.add(new_dish)
                 new_dish.add_ingredient_dependency(new_ingredient, amount)
